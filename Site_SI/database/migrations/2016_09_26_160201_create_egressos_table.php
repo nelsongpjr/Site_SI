@@ -15,6 +15,7 @@ class CreateEgressosTable extends Migration
     {
         Schema::create('egressos', function (Blueprint $table) {
             $table->increments('id');
+            $table->
             $table->timestamps();
         });
     }
