@@ -15,23 +15,18 @@ class CreateEgressosTable extends Migration
     {
         Schema::create('egressos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',45);
-            $table->text('dados')->nullable();
+            $table->string('nome',50);
+            $table->longText('descricao')->nullable();
             
             $table->integer('admin_id');
             $table->integer('imagens_id')->nullable();
-            $table->integer('anexo_id')->nullable();
 
             $table->foreign('imagens_id')->references('id')
-                                    ->on('imagens')
-                                    ->onDelete('cascade');
-            $table->foreign('anexo_id')->references('id')
-                                    ->on('anexos')
-                                    ->onDelete('cascade');
+            ->on('imagens')
+            ->onDelete('cascade');
+           
             $table->foreign('admin_id')->references('id')
-                                    ->on('User');
-            
-            
+            ->on('User');  
             $table->timestamps();
         });
     }
