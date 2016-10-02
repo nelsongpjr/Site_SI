@@ -17,12 +17,12 @@ class CreateDocentesTable extends Migration
             $table->increments('id');
             $table->string('nome',50);
             $table->longText('descricao')->nullable();
-            $table->integer('admin_id');
-            $table->integer('imagens_id')->nullable();
+            $table->integer('admin_id')->unsigned();
+            $table->integer('imagens_id')->nullable()->unsigned();
             
             $table->foreign('imagens_id')->references('id')->on('imagens')->onDelete('cascade');
             $table->foreign('admin_id')->references('id')
-            ->on('User');  
+            ->on('users');  
             $table->timestamps();
         });
     }

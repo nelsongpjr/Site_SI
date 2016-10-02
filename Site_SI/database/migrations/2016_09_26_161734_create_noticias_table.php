@@ -19,9 +19,9 @@ class CreateNoticiasTable extends Migration
             
             $table->longText('noticia')->nullable();
             
-            $table->integer('admin_id');
-            $table->integer('imagens_id')->nullable();
-            $table->integer('anexo_id')->nullable();
+            $table->integer('admin_id')->unsigned();
+            $table->integer('imagens_id')->nullable()->unsigned();
+            $table->integer('anexo_id')->nullable()->unsigned();
 
             $table->foreign('imagens_id')->references('id')
             ->on('imagens')
@@ -30,7 +30,7 @@ class CreateNoticiasTable extends Migration
             ->on('anexos')
             ->onDelete('cascade');
             $table->foreign('admin_id')->references('id')
-            ->on('User');  
+            ->on('users');  
             $table->timestamps();
     });
     }

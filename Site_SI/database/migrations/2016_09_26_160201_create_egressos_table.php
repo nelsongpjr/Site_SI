@@ -18,9 +18,9 @@ class CreateEgressosTable extends Migration
             $table->string('name',45);
             $table->text('descricao')->nullable();
             
-            $table->integer('admin_id');
-            $table->integer('imagens_id')->nullable();
-            $table->integer('anexo_id')->nullable();
+            $table->integer('admin_id')->unsigned();
+            $table->integer('imagens_id')->nullable()->unsigned();
+            $table->integer('anexo_id')->nullable()->unsigned();
 
             $table->foreign('imagens_id')->references('id')
                                     ->on('imagens')
@@ -28,8 +28,9 @@ class CreateEgressosTable extends Migration
             $table->foreign('anexo_id')->references('id')
                                     ->on('anexos')
                                     ->onDelete('cascade');
+            
             $table->foreign('admin_id')->references('id')
-                                    ->on('User');
+                                    ->on('users');
             
             
             $table->timestamps();
