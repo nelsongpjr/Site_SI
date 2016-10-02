@@ -1,17 +1,20 @@
 # Anotações
-<p>
+
 criar projeto: composer create-project --prefer-dist laravel/laravel blog
 
+PARA ABRIR E EXECUTAR O PROJETO
+	- CLONAR O PROJETO DENTRO DA PASTA htdocs DO XAMPP
+	- RENOMEAR O AQUIVO .env.example PARA .env
+	- DAR INÍCIO NOS SERVIDORES APACHE E MYSQL
+	- CRIAR A BASE DE DADOS LOCAL NO localhost/phpmyadmin com o nomde: site_si TUDO MINUSCULO
+	- NO TERMINAL IR ATÉ O DIRETORIO DO SITE: cd C:\xampp\htdocs\Prototipo_Pagina_SI_UFSMFW\Site_SI
+	- EXECUTAR O COMPOSER PARA A CRIAÇÃO DO PROJETO: composer update
+	- EXECUTAR AS MIGRATIONS: php artisan migrate
 
-configurar a base de dados no arquivo .env
+PARA EXECUTAR
+	- DAR INÍCIO NO SERVIDOR: php artisan serve
+	- ACESSAR NO NAVEGADOR: localhost:8000
 
-
-	DB_CONNECTION=mysql
-	DB_HOST=localhost
-	DB_PORT=3306
-	DB_DATABASE=dbname//nome da base de dados
-	DB_USERNAME=root
-	DB_PASSWORD=""
 
 
 Criar model e migration: php artisan make:model nomedatabela -m
