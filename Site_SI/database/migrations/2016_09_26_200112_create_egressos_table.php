@@ -21,12 +21,8 @@ class CreateEgressosTable extends Migration
             $table->integer('admin_id');
             $table->integer('imagens_id')->nullable();
 
-            $table->foreign('imagens_id')->references('id')
-            ->on('imagens')
-            ->onDelete('cascade');
-           
-            $table->foreign('admin_id')->references('id')
-            ->on('User');  
+            $table->foreign('imagens_id')->references('id')->on('imagens')->onDelete('cascade');
+            $table->foreign('admin_id')->references('id')->on('User');  
             $table->timestamps();
         });
     }

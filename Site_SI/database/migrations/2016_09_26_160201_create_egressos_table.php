@@ -16,7 +16,7 @@ class CreateEgressosTable extends Migration
         Schema::create('egressos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',45);
-            $table->text('dados')->nullable();
+            $table->text('descricao')->nullable();
             
             $table->integer('admin_id');
             $table->integer('imagens_id')->nullable();
