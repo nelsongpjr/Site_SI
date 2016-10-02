@@ -30,5 +30,9 @@ Criar model e migration: php artisan make:model nomedatabela -m
 iniciar servidor: php artisan serve
 
 
+Iniciar o projeto no seu computador:
+	
+	Assim que baixar o progeto do git dar um: composer update
+
 Anotações interessantes http://www.danielrodrigues.net.br/laravel-anotacoes/
 Documentações em português: http://laravel.artesaos.org/docs/
