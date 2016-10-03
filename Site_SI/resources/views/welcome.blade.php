@@ -14,6 +14,7 @@
         </head>
 
     <bondy>
-<content
+<content>
+</content>
     </body>
 </html>

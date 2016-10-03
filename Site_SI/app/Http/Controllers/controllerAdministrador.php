@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class controllerAdmin extends Controller
+class controllerAdministrador extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class controllerAdmin extends Controller
      */
     public function index()
     {
-        //
+     return view('admin/administrador', compact('User'));
     }
 
     /**
