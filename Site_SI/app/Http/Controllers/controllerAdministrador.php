@@ -6,16 +6,35 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
+
+
 class controllerAdministrador extends Controller
 {
+      
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+/**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+
     public function index()
     {
-     return view('admin/administrador', compact('User'));
+        $options = array("Notícia", "Informação", "Egressos", "Docentes", "TGSI");
+     return view('admin/administrador', compact($options));
     }
 
     /**
@@ -37,6 +56,25 @@ class controllerAdministrador extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function logout()
+    {
+        //
+        auth::logout();
+        return view('admin/administrador');
+    }
+  
+  
+
+    public function tipo($indice) {
+                 
+            if (index == 1){
+
+            }
+            if(index == 2){
+
+            }
     }
 
     /**
@@ -83,4 +121,8 @@ class controllerAdministrador extends Controller
     {
         //
     }
+
+   
+
 }
+

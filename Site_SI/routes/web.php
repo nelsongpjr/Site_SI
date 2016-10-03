@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/administrador', 'controllerAdministrador');
 
+
+
+Auth::routes();
+
+Route::get('/administrador', 'controllerAdministrador@index');
+
+Route::get('/logout', 'controllerAdministrador@logout');
 
 
