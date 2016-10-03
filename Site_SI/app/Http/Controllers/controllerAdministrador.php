@@ -33,8 +33,8 @@ class controllerAdministrador extends Controller
 
     public function index()
     {
-        $options = array("Notícia", "Informação", "Egressos", "Docentes", "TGSI");
-     return view('admin/administrador', compact($options));
+        
+        return view('admin/administrador');
     }
 
     /**
@@ -58,25 +58,13 @@ class controllerAdministrador extends Controller
         //
     }
 
-    public function logout()
-    {
-        //
+    public function logout(){
         auth::logout();
         return view('admin/administrador');
     }
   
-  
 
-    public function tipo($indice) {
-                 
-            if (index == 1){
-
-            }
-            if(index == 2){
-
-            }
-    }
-
+    
     /**
      * Display the specified resource.
      *
