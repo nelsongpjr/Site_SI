@@ -35,7 +35,7 @@ class RegisterController extends Controller
      * @return void
      */
     public function __construct()
-    {
+    {   //para proteger troque o guest por auth
         $this->middleware('guest');
     }
 

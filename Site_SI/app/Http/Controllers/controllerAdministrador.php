@@ -8,33 +8,36 @@ use App\Http\Requests;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\docentes;
+
+use App\egressos;
+
+use App\noticias;
+
+use App\informacoes;
+
+
 
 class controllerAdministrador extends Controller
 {
-      
-    
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
 
-/**
+    /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-
 
     public function index()
     {
-        
-        return view('admin/administrador');
+
+        $this->noticia();
     }
 
     /**
@@ -42,11 +45,46 @@ class controllerAdministrador extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function noticia() {
         //
+        $noticia = noticias::all();
+
+        return view('admin/viewEdit/noticia',compact('noticia'));
     }
 
+    public function informacao(){
+        //
+        $informacao = informacoes::all();
+
+        return view('admin/viewEdit/informacao',compact('informacao'));
+    }
+
+    public function tgsi(){
+        //
+        $tg = tgsi::all();
+
+        return view('admin/viewEdit/noticia',compact('tg'));
+    }
+
+
+    public function egressos(){
+        //
+        $egresso = egressos::all();
+
+        return view('admin/viewEdit/noticia',compact('egresso'));
+    }
+
+    public function docentes(){
+        //
+        $docente = docentes::all();
+
+        return view('admin/viewEdit/noticia',compact('docente'));
+    }
+
+
+    public function Pesquisa (){
+
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -60,11 +98,11 @@ class controllerAdministrador extends Controller
 
     public function logout(){
         auth::logout();
-        return view('admin/administrador');
+        return redirect('/administrador');
     }
-  
 
-    
+
+
     /**
      * Display the specified resource.
      *
@@ -74,6 +112,7 @@ class controllerAdministrador extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -110,7 +149,7 @@ class controllerAdministrador extends Controller
         //
     }
 
-   
+
 
 }
 

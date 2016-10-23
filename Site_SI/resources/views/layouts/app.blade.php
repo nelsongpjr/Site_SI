@@ -11,32 +11,32 @@
     <title>Sistemas de Informação/UFSM-FW</title>
 
     <!-- Styles -->
-     <link rel="stylesheet" href="{{ asset('css/foundation.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/foundation.css')}}">
 
-  <!-- This is how you would link your custom stylesheet -->
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- This is how you would link your custom stylesheet -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-  
+
 </head>
-
-@include('admin.headerAdmin')
-        
+<div class="row">
+    @include('admin.headerAdmin')
+</div>
 
 <body>
-    <div class="row">
-        <div class="columns" style="margin-top: -20; margin-top: 60px;" >
-            @yield('conteudo')
-        </div>
+<div class="row">
+    <div class="columns" style="margin-top: 60px;">
+        @yield('conteudo')
     </div>
-    
-    
-    <!-- Scripts -->
-    <script src="{{ asset('js/vendor/jquery.js') }}"></script>
-    <script src="{{ asset('js/vendor/foundation.min.js') }}"></script>
+</div>
 
-    <script>
-        $(document).foundation();
-    </script>
-    
+
+<!-- Scripts -->
+<script src="{{ asset('js/vendor/jquery.js') }}"></script>
+<script src="{{ asset('js/vendor/foundation.min.js') }}"></script>
+
+<script>
+    $(document).foundation();
+</script>
+
 </body>
 </html>

@@ -11,17 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::auth();
+
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/administrador', 'controllerAdministrador@noticia');
+
+	Route::get('/logout', 'controllerAdministrador@logout');
+
+	Route::get('administrador/noticia', 'controllerAdministrador@noticia');
+
+	Route::get('administrador/informacao', 'controllerAdministrador@informacao');
+
+	Route::get('administrador/egresso', 'controllerAdministrador@egresso');
+
+	Route::get('administrador/docente', 'controllerAdministrador@docente');
+
+	Route::get('administrador/tgsi', 'controllerAdministrador@tgsi');
+
 });
 
 
-
-
-Auth::routes();
-
-Route::get('/administrador', 'controllerAdministrador@index');
-
-Route::get('/logout', 'controllerAdministrador@logout');
 
 

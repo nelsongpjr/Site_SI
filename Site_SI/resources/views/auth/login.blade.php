@@ -9,7 +9,7 @@
                 <div class="panel-body">
                     <form role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
-                            <label for="email" class="medium-12 columns">E-Mail Address</label>
+                            <label for="email" class="medium-12 columns">E-Mail</label>
                             <div class="medium-12 columns">
                                 <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
                                 @if ($errors->has('email'))
@@ -18,7 +18,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <label for="password" class="medium-12 columns">Password</label>
+                            <label for="password" class="medium-12 columns">Senha</label>
                             <div class="medium-12 columns">
                                 <input id="password" type="password" name="password" required>
                                 @if ($errors->has('password'))
@@ -34,7 +34,7 @@
                                 </button>
                             </div>
                         </div>
-                        <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                        <a class="btn btn-link" href="{{ url('password/reset') }}">Perdeu a senha?</a>
                     </form>
                 </div>
             </div>
