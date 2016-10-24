@@ -16,6 +16,7 @@ use App\noticias;
 
 use App\informacoes;
 
+use App\tgsis;
 
 
 class controllerAdministrador extends Controller
@@ -37,7 +38,7 @@ class controllerAdministrador extends Controller
     public function index()
     {
 
-        $this->noticia();
+        $this->noticias();
     }
 
     /**
@@ -45,46 +46,76 @@ class controllerAdministrador extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function noticia() {
-        //
-        $noticia = noticias::all();
-
-        return view('admin/viewEdit/noticia',compact('noticia'));
+    public function noticias() {
+        //Listar noticias
+        $dados = noticias::all();
+        $dataType = 'noticia';
+        return view('admin/viewEdit/lista',compact('dados','dataType'));
     }
 
-    public function informacao(){
-        //
-        $informacao = informacoes::all();
-
-        return view('admin/viewEdit/informacao',compact('informacao'));
+    public function informacoes(){
+        //Listar Informações
+        $dados = informacoes::all();
+        $dataType = 'informacao';
+        return view('admin/viewEdit/lista',compact('dados', 'dataType'));
     }
 
     public function tgsi(){
-        //
-        $tg = tgsi::all();
-
-        return view('admin/viewEdit/noticia',compact('tg'));
+        //Listar TGSI
+        $dados = tgsis::all();
+        $dataType = 'tgsi';
+        return view('admin/viewEdit/lista',compact('dados', 'dataType'));
     }
 
 
     public function egressos(){
-        //
-        $egresso = egressos::all();
-
-        return view('admin/viewEdit/noticia',compact('egresso'));
+        //Listar Egressos
+        $dados = egressos::all();
+        $dataType = 'egresso';
+        return view('admin/viewEdit/lista',compact('dados', 'dataType'));
     }
 
     public function docentes(){
-        //
-        $docente = docentes::all();
+        //Listar Docentes
+        $dados = docentes::all();
+        $dataType = 'docentes';
+        return view('admin/viewEdit/lista',compact('dados', 'dataType'));
+    }
 
-        return view('admin/viewEdit/noticia',compact('docente'));
+    public function adicionarNoticias(Request $request) {
+        //Adicionar noticias
+        $titulo = $request->input('titulo');
+        return view('admin/viewEdit/noticia', compact('titulo'));
+    }
+
+    public function adicionarInformacoes(){
+        //Adicionar Informações
+        $dataType = 'informacao';
+        return view('admin/viewEdit/editar',compact('dados', 'dataType'));
+    }
+
+    public function adicionarTgsi(){
+        //Adicionar TGSI
+        $dataType = 'tgsi';
+        return view('admin/viewEdit/editar',compact('dados', 'dataType'));
     }
 
 
-    public function Pesquisa (){
-
+    public function adicionarEgressos(){
+        //Adicionar Egressos
+        $dataType = 'egresso';
+        return view('admin/viewEdit/editar',compact('dados', 'dataType'));
     }
+
+    public function adicionarDocentes(){
+        //Adicionar Docentes
+        $dataType = 'docentes';
+        return view('admin/viewEdit/editar',compact('dados', 'dataType'));
+    }
+
+
+
+
     /**
      * Store a newly created resource in storage.
      *

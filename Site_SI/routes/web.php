@@ -19,15 +19,25 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/logout', 'controllerAdministrador@logout');
 
-	Route::get('administrador/noticia', 'controllerAdministrador@noticia');
+	Route::get('administrador/noticias', 'controllerAdministrador@noticias');
 
-	Route::get('administrador/informacao', 'controllerAdministrador@informacao');
+	Route::get('administrador/informacoes', 'controllerAdministrador@informacoes');
 
-	Route::get('administrador/egresso', 'controllerAdministrador@egresso');
+	Route::get('administrador/egressos', 'controllerAdministrador@egressos');
 
-	Route::get('administrador/docente', 'controllerAdministrador@docente');
+	Route::get('administrador/docentes', 'controllerAdministrador@docentes');
 
-	Route::get('administrador/tgsi', 'controllerAdministrador@tgsi');
+	Route::get('administrador/tgsis', 'controllerAdministrador@tgsi');
+
+    Route::get('administrador/adicionar/noticia', 'controllerAdministrador@adicionarNoticias');
+
+    Route::get('administrador/adicionar/informacao', 'controllerAdministrador@adicionarInformacoes');
+
+    Route::get('administrador/adicionar/egresso', 'controllerAdministrador@adicionarEgressos');
+
+    Route::get('administrador/adicionar/docente', 'controllerAdministrador@adicionarDocentes');
+
+    Route::get('administrador/adicionar/tgsi', 'controllerAdministrador@adicionarTgsi');
 
 });
 
